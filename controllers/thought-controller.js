@@ -1,4 +1,4 @@
-const Thought = require('../models/thought-model');
+const Thought = require('../models');
 
 // Create a new thought
 exports.createThought = async (req, res) => {
