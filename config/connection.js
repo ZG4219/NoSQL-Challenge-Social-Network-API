@@ -1,8 +1,20 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/socialmedia', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+// Replace <database_url> with the URL of your MongoDB database
+const mongoURI = '<database_url>';
 
-module.exports = mongoose.connection;
+const connectDB = async () => {
+    try {
+        await mongoose.connect(mongoURI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useCreateIndex: true
+        });
+        console.log('MongoDB Connected...');
+    } catch (err) {
+        console.error(err.message);
+        process.exit(1);
+    }
+};
+
+module.exports = connectDB;
