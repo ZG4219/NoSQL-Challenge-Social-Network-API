@@ -1,7 +1,7 @@
 const Thought = require('../models');
 
 // Create a new thought
-exports.createThought = async (req, res) => {
+createThought = async (req, res) => {
   const thought = new Thought(req.body);
   try {
     const savedThought = await thought.save();
@@ -12,7 +12,7 @@ exports.createThought = async (req, res) => {
 };
 
 // Get all thoughts
-exports.getThoughts = async (req, res) => {
+getThoughts = async (req, res) => {
   try {
     const thoughts = await Thought.find();
     res.json(thoughts);
@@ -22,7 +22,7 @@ exports.getThoughts = async (req, res) => {
 };
 
 // Get a single thought by ID
-exports.getSingleThought = async (req, res) => {
+getSingleThought = async (req, res) => {
   try {
     const thought = await Thought.findById(req.params.thoughtId);
     if (!thought) return res.status(404).json({ message: 'Thought not found' });
@@ -33,7 +33,7 @@ exports.getSingleThought = async (req, res) => {
 };
 
 // Update a thought by ID
-exports.updateThought = async (req, res) => {
+updateThought = async (req, res) => {
   try {
     const thought = await Thought.findByIdAndUpdate(req.params.thoughtId, req.body, {
       new: true
@@ -46,7 +46,7 @@ exports.updateThought = async (req, res) => {
 };
 
 // Delete a thought by ID
-exports.deleteThought = async (req, res) => {
+deleteThought = async (req, res) => {
   try {
     const thought = await Thought.findByIdAndDelete(req.params.thoughtId);
     if (!thought) return res.status(404).json({ message: 'Thought not found' });
@@ -57,7 +57,7 @@ exports.deleteThought = async (req, res) => {
 };
 
 // Add a reaction to a thought
-exports.addReaction = async (req, res) => {
+addReaction = async (req, res) => {
   try {
     const thought = await Thought.findById(req.params.thoughtId);
     if (!thought) return res.status(404).json({ message: 'Thought not found' });
@@ -70,7 +70,7 @@ exports.addReaction = async (req, res) => {
 };
 
 // Remove a reaction from a thought
-exports.removeReaction = async (req, res) => {
+removeReaction = async (req, res) => {
   try {
     const thought = await Thought.findById(req.params.thoughtId);
     if (!thought) return res.status(404).json({ message: 'Thought not found' });

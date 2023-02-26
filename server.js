@@ -10,10 +10,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network-api', {
-  useFindAndModify: false,
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false // add this line to disable the use of `findAndModify`
 });
+
 
 mongoose.set('debug', true);
 
