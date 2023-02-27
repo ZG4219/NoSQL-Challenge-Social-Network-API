@@ -44,3 +44,8 @@ The API has the following endpoints:
 
 - `POST /follow`: Follows another user
 - `DELETE /follow/:id`: Unfollows a user
+
+## Links
+
+Github: https://github.com/ZG4219/NoSQL-Challenge-Social-Network-API
+Video Walkthrough: 
