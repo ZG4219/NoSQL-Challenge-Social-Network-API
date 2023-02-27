@@ -47,5 +47,5 @@ The API has the following endpoints:
 
 ## Links
 
-Github: https://github.com/ZG4219/NoSQL-Challenge-Social-Network-API
-Video Walkthrough: 
+- Github: https://github.com/ZG4219/NoSQL-Challenge-Social-Network-API
+- Video Walkthrough: 
