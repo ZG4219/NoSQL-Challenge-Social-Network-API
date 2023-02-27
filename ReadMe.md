@@ -48,4 +48,4 @@ The API has the following endpoints:
 ## Links
 
 - Github: https://github.com/ZG4219/NoSQL-Challenge-Social-Network-API
-- Video Walkthrough: 
+- Video Walkthrough: https://drive.google.com/file/d/1YpARnbLXGD0cLU_bexGAgxR0nV-A7jK0/view
