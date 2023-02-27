@@ -9,12 +9,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network-api', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/social-network-api', {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false // add this line to disable the use of `findAndModify`
+  useUnifiedTopology: true
 });
+
+// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network-api', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   useCreateIndex: true,
+//   useFindAndModify: false // add this line to disable the use of `findAndModify`
+// });
 
 
 mongoose.set('debug', true);
